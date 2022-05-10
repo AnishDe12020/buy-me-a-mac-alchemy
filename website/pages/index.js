@@ -161,7 +161,7 @@ export default function Home() {
         <title>Anish De | BuyMeAMac on Goerli</title>
         <meta
           name="description"
-          content="App as part of a course that lets one buy me a coffee on the Goerli testnet"
+          content="App as part of a course that lets one buy me a mac on the Goerli testnet"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
