@@ -1,15 +1,5 @@
-# Basic Sample Hardhat Project
+# Buy Me a Mac
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+A simple dApp deployed on the Goerli testnet that... lets one buy me a mac :)
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+Deployed version: [https://bma.vercel.app/](https://bma.vercel.app/)
