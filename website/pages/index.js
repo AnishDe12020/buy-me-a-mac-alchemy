@@ -58,7 +58,7 @@ export default function Home() {
     }
   };
 
-  const buyCoffee = async () => {
+  const buyCoffee = async (value) => {
     try {
       const { ethereum } = window;
 
@@ -75,7 +75,7 @@ export default function Home() {
         const coffeeTxn = await buyMeACoffee.buyCoffee(
           name ? name : "anon",
           message ? message : "Enjoy your coffee!",
-          { value: ethers.utils.parseEther("0.001") }
+          { value: ethers.utils.parseEther(value) }
         );
 
         await coffeeTxn.wait();
@@ -158,7 +158,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Anish De | BuyMeACoffee on Goerli</title>
+        <title>Anish De | BuyMeAMac on Goerli</title>
         <meta
           name="description"
           content="App as part of a course that lets one buy me a coffee on the Goerli testnet"
@@ -177,11 +177,12 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "8rem",
+          marginTop: "6rem",
+          marginBottom: "6rem",
         }}
       >
         <Text h1 css={{ marginBottom: "1rem" }}>
-          Buy Anish a coffee
+          Buy Anish a Mac
         </Text>
 
         {currentAccount ? (
@@ -210,8 +211,28 @@ export default function Home() {
               />
             </Container>
 
-            <Button type="button" onClick={buyCoffee}>
-              Send 1 Coffee for 0.001 ETH
+            <Button
+              type="button"
+              onClick={() => buyCoffee("0.001")}
+              css={{ marginTop: "1rem" }}
+            >
+              Send M1 MacBook Air 8/256 for 0.001 ETH
+            </Button>
+
+            <Button
+              type="button"
+              onClick={() => buyCoffee("0.003")}
+              css={{ marginTop: "1rem" }}
+            >
+              Send M1 Max MacBook Pro 64/1TB for 0.003 ETH
+            </Button>
+
+            <Button
+              type="button"
+              onClick={() => buyCoffee("0.005")}
+              css={{ marginTop: "1rem" }}
+            >
+              Send M1 Ultra Mac Studio 128/2TB for 0.005 ETH
             </Button>
           </Container>
         ) : (
@@ -219,7 +240,7 @@ export default function Home() {
         )}
 
         {currentAccount && (
-          <Text h2 css={{ marginTop: "2rem" }}>
+          <Text h2 css={{ marginTop: "2rem", marginBottom: "1rem" }}>
             Memos received
           </Text>
         )}
